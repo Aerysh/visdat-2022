@@ -36,9 +36,9 @@ def select_df (kota,tahun,bulan,y):
 def show_plot(kota, tahun, bulan ,y):
     temp_df = select_df(kota, tahun, bulan ,y)
 
-    p = figure(title="Covid Case", x_axis_label='Date', y_axis_label=y)
+    p = figure(title="Covid Case", x_axis_label='Date', y_axis_label=y, x_axis_type="datetime")
 
-    p.line(temp_df.index, temp_df[y], legend_label="Temp.", line_width=2)
+    p.line(temp_df.index, temp_df[y], legend_label=y, line_width=2)
 
     curdoc().clear()
     curdoc().add_root(select_provinsi)
